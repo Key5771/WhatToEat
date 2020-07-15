@@ -16,28 +16,91 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whatToEat" translatesAutoresizingMaskIntoConstraints="NO" id="U7E-Yb-2iu">
-                                <rect key="frame" x="32" y="203.5" width="350" height="319.5"/>
+                                <rect key="frame" x="32" y="292.5" width="350" height="319.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxD-dM-ee4">
-                                <rect key="frame" x="120" y="712" width="174" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="60" y="712" width="294" height="30"/>
+                                <state key="normal" title="시작하기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="DUy-Pt-OrO" kind="presentation" modalPresentationStyle="fullScreen" id="Hm7-0A-ZCs"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4C-rK-7Nu">
+                                <rect key="frame" x="10" y="230" width="394" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.88627450980392153" green="0.50980392156862742" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="MxD-dM-ee4" firstAttribute="top" secondItem="U7E-Yb-2iu" secondAttribute="bottom" constant="189" id="Rj8-Va-w2R"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MxD-dM-ee4" secondAttribute="trailing" constant="120" id="amq-Mw-vMd"/>
+                            <constraint firstItem="U7E-Yb-2iu" firstAttribute="top" secondItem="S4C-rK-7Nu" secondAttribute="bottom" constant="30" id="Bvy-P4-lmC"/>
+                            <constraint firstItem="MxD-dM-ee4" firstAttribute="top" secondItem="U7E-Yb-2iu" secondAttribute="bottom" constant="100" id="Rj8-Va-w2R"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MxD-dM-ee4" secondAttribute="trailing" constant="60" id="amq-Mw-vMd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S4C-rK-7Nu" secondAttribute="trailing" constant="10" id="csi-dD-GAb"/>
                             <constraint firstItem="U7E-Yb-2iu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="ivT-uc-gfa"/>
-                            <constraint firstItem="MxD-dM-ee4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="ufF-ot-zVF"/>
+                            <constraint firstItem="MxD-dM-ee4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="ufF-ot-zVF"/>
+                            <constraint firstItem="S4C-rK-7Nu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="w2C-d1-viP"/>
+                            <constraint firstItem="S4C-rK-7Nu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="w4F-H8-2A0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U7E-Yb-2iu" secondAttribute="trailing" constant="32" id="wFj-dP-RjX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MxD-dM-ee4" secondAttribute="bottom" constant="120" id="yrf-pz-QJ4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="MxD-dM-ee4" id="hXj-6t-8ol"/>
+                        <outlet property="label" destination="S4C-rK-7Nu" id="beB-Yw-XG4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="130"/>
+            <point key="canvasLocation" x="-736" y="130"/>
+        </scene>
+        <!--Roulette View Controller-->
+        <scene sceneID="Mt2-Xa-nvm">
+            <objects>
+                <viewController id="DUy-Pt-OrO" customClass="RouletteViewController" customModule="WhatToEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V67-yG-Lgq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QG1-g3-GkU" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="64" width="374" height="648"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHH-N5-O31">
+                                <rect key="frame" x="60" y="802" width="294" height="30"/>
+                                <state key="normal" title="돌림판 돌리기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="spinButtonClick:" destination="DUy-Pt-OrO" eventType="touchUpInside" id="lgt-pU-xsf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.88450664280000002" green="0.51074677710000005" blue="0.4627282023" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6gs-aH-AYA" firstAttribute="bottom" secondItem="QG1-g3-GkU" secondAttribute="bottom" constant="150" id="7jQ-pC-kJl"/>
+                            <constraint firstItem="6gs-aH-AYA" firstAttribute="trailing" secondItem="QG1-g3-GkU" secondAttribute="trailing" constant="20" id="Eqs-Tc-c0s"/>
+                            <constraint firstItem="QG1-g3-GkU" firstAttribute="top" secondItem="6gs-aH-AYA" secondAttribute="top" constant="20" id="Qak-Og-hxq"/>
+                            <constraint firstItem="6gs-aH-AYA" firstAttribute="bottom" secondItem="RHH-N5-O31" secondAttribute="bottom" constant="30" id="cHr-f8-niI"/>
+                            <constraint firstItem="QG1-g3-GkU" firstAttribute="leading" secondItem="6gs-aH-AYA" secondAttribute="leading" constant="20" id="pgo-YS-rM4"/>
+                            <constraint firstItem="RHH-N5-O31" firstAttribute="leading" secondItem="6gs-aH-AYA" secondAttribute="leading" constant="60" id="rrZ-f4-UtR"/>
+                            <constraint firstItem="6gs-aH-AYA" firstAttribute="trailing" secondItem="RHH-N5-O31" secondAttribute="trailing" constant="60" id="xIf-4A-izO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6gs-aH-AYA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8tq-D2-rof"/>
+                    <connections>
+                        <outlet property="pieChartView" destination="QG1-g3-GkU" id="4y8-m1-Wep"/>
+                        <outlet property="spinButton" destination="RHH-N5-O31" id="lqq-47-Arf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1NE-P2-WM2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="941" y="130"/>
         </scene>
     </scenes>
     <resources>
