@@ -37,10 +37,11 @@ class RouletteViewController: UIViewController {
         // 1. Set ChartDataEntry
         var dataEntries: [ChartDataEntry] = []
         for i in 0..<dataPoints.count {
-            let data = PieChartDataEntry(value: values[i], label: dataPoints[i])
-//            let dataEntry = PieChartDataEntry(value: values[i], label: dataPoints[i], data: dataPoints[i] as AnyObject)
-            dataEntries.append(data)
+//            let data = PieChartDataEntry(value: values[i], label: dataPoints[i])
+            let dataEntry = PieChartDataEntry(value: values[i], label: dataPoints[i], data: dataPoints[i] as AnyObject)
+            dataEntries.append(dataEntry)
         }
+        
         // 2. Set ChartDataSet
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
         pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataPoints.count)
@@ -48,11 +49,6 @@ class RouletteViewController: UIViewController {
         
         // 3. Set ChartData
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
-//        let format = NumberFormatter()
-//        format.numberStyle = .none
-//        let formatter = DefaultValueFormatter(formatter: format)
-//        pieChartData.setValueFormatter(formatter)
-        // pieChartData.setDrawValues(false)
         
         // 4. Assign it to the chart’s data
         pieChartView.data = pieChartData
@@ -73,12 +69,13 @@ class RouletteViewController: UIViewController {
     }
     
     @IBAction func spinButtonClick(_ sender: Any) {
-        let random = Int.random(in: 0...360) + 1440
+        let random = Int.random(in: 0...359) + 1440
+        let duration = 1
         var real = 0
         print("random: \(random)")
         
-        pieChartView.spin(duration: 1000, fromAngle: CGFloat(0), toAngle: -CGFloat(random)) { (lhs, rhs) -> Double in
-            if lhs < Double(1) {
+        pieChartView.spin(duration: TimeInterval(duration*1000), fromAngle: CGFloat(0), toAngle: -CGFloat(random)) { (lhs, rhs) -> Double in
+            if lhs < Double(duration) {
                 return lhs
             } else {
                 return rhs
@@ -92,23 +89,22 @@ class RouletteViewController: UIViewController {
         case 0...45:
             print("야식")
         case 46...90:
-            print("패스트푸드")
+            print("기타")
         case 91...135:
-            print("분식")
+            print("한식")
         case 136...180:
-            print("일식")
+            print("양식")
         case 181...225:
             print("중식")
         case 226...270:
-            print("양식")
+            print("일식")
         case 271...315:
-            print("한식")
+            print("분식")
         case 316...360:
-            print("기타")
+            print("패스트푸드")
         default:
             print("Error")
         }
-//        pieChartView.spin(duration: 1000, fromAngle: CGFloat(0), toAngle: CGFloat(random), easingOption: .easeInOutQuad)
     }
     
     
