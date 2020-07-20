@@ -10,8 +10,12 @@ import UIKit
 import Charts
 
 class RouletteViewController: UIViewController {
-    @IBOutlet weak var pieChartView: PieChartView!
-    @IBOutlet weak var spinButton: UIButton!
+    @IBOutlet weak private var pieChartView: PieChartView!
+    @IBOutlet weak private var spinButton: UIButton!
+    @IBOutlet weak private var spaceView: UIView!
+    @IBOutlet weak private var retryButton: UIButton!
+    @IBOutlet weak private var anotherButton: UIButton!
+    
     
     
     let food = ["한식", "양식", "중식", "일식", "분식", "패스트푸드", "야식", "기타"]
@@ -31,6 +35,18 @@ class RouletteViewController: UIViewController {
         spinButton.layer.borderWidth = 1
         spinButton.layer.borderColor = UIColor.white.cgColor
         spinButton.layer.cornerRadius = 10
+        
+        retryButton.isHidden = true
+        retryButton.layer.borderWidth = 1
+        retryButton.layer.borderColor = UIColor.white.cgColor
+        retryButton.layer.cornerRadius = 10
+        
+        anotherButton.isHidden = true
+        anotherButton.layer.borderWidth = 1
+        anotherButton.layer.borderColor = UIColor.white.cgColor
+        anotherButton.layer.cornerRadius = 10
+        
+        spaceView.isHidden = true
     }
     
     func customizeChart(dataPoints: [String], values: [Double]) {
@@ -72,6 +88,12 @@ class RouletteViewController: UIViewController {
         let random = Int.random(in: 0...359) + 1440
         let duration = 1
         var real = 0
+        
+        spaceView.isHidden = false
+        retryButton.isHidden = false
+        anotherButton.isHidden = false
+        spinButton.isHidden = true
+        
         print("random: \(random)")
         
         pieChartView.spin(duration: TimeInterval(duration*1000), fromAngle: CGFloat(0), toAngle: -CGFloat(random)) { (lhs, rhs) -> Double in

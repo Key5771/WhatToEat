@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -105,7 +105,6 @@
 				0FF4EC3C3C810CE5097E6DDE /* Pods-WhatToEatTests.debug.xcconfig */,
 				0BE4E03C4D48C0B42451D35C /* Pods-WhatToEatTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -600,6 +599,7 @@
 			baseConfigurationReference = 4233A7F3406D8D3F43FF5112 /* Pods-WhatToEat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U53BLS7M93;
 				INFOPLIST_FILE = WhatToEat/Info.plist;
@@ -619,6 +619,7 @@
 			baseConfigurationReference = DDA8E0136A2D31D6B9AA48D4 /* Pods-WhatToEat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U53BLS7M93;
 				INFOPLIST_FILE = WhatToEat/Info.plist;
